@@ -1,12 +1,14 @@
 #pragma once
 #include "opengl.h"
 
+#include "../util/VertexBufferLayout.h"
+
 class VertexBuffer {
 private:
 	unsigned int m_bufferID;
 
 public:
-	VertexBuffer(const void* data, unsigned int size);
+	VertexBuffer(const void* data, unsigned int size, VertexBufferLayout layout);
 	~VertexBuffer();
 
 	void Bind() const;

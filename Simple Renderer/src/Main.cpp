@@ -5,6 +5,7 @@
 #include "core/Texture.h"
 #include "core/Renderer.h"
 
+#include "util/VertexBufferLayout.h"
 
 #include <iostream>
 
@@ -13,7 +14,7 @@ int main() {
 	if (!glfwInit())
 		return -1;
 
-	window = glfwCreateWindow(800, 800, "Simple Renderer", NULL, NULL);
+	window = glfwCreateWindow(800, 600, "Simple Renderer", NULL, NULL);
 	if (!window) {
 		glfwTerminate();
 		return -1;
@@ -25,10 +26,10 @@ int main() {
 
 	{
 		float vertices[] = {
-			-0.5f, -0.5f, 0.0f, 0.0f,
-			 0.5f, -0.5f, 1.0f, 0.0f,
-			 0.5f,  0.5f, 1.0f, 1.0f,
-			-0.5f,  0.5f, 0.0f, 1.0f
+			-0.5f, -0.5f, 0.0f, 0.0f, 
+			 0.5f, -0.5f, 1.0f, 0.0f, 
+			 0.5f,  0.5f, 1.0f, 1.0f, 
+			-0.5f,  0.5f, 0.0f, 1.0f 
 		};
 
 	
@@ -40,9 +41,14 @@ int main() {
 		Renderer renderer;
 
 		Shader shader("res/basic.vert", "res/basic.frag");
-		VertexBuffer vb(vertices, 16 * sizeof(float));
+
+		VertexBufferLayout layout;
+		layout.Push<float>(2);
+		layout.Push<float>(2);
+
+		VertexBuffer vb(vertices, 6 * 4 * sizeof(float), layout);
 		IndexBuffer ib(indeces, 6);
-		Texture tex("res/images/gravel.jpg");
+		Texture tex("res/images/sanju.jpg");
 
 		tex.Bind(0);
 		shader.SetUniform1i("u_Texture", 0);

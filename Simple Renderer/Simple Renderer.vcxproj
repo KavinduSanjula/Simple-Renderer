@@ -157,6 +157,7 @@
     <ClCompile Include="src\core\VertexBuffer.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="vender\stb-image\stb_image.cpp" />
+    <ClCompile Include="src\util\VertexBufferLayout.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\core\IndexBuffer.h" />
@@ -166,6 +167,7 @@
     <ClInclude Include="src\core\Texture.h" />
     <ClInclude Include="src\core\VertexBuffer.h" />
     <ClInclude Include="vender\stb-image\stb_image.h" />
+    <ClInclude Include="src\util\VertexBufferLayout.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="res\basic.frag" />
