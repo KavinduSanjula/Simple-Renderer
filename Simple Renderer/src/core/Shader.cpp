@@ -82,6 +82,11 @@ void Shader::SetUniform4f(const char* uniform, float v1, float v2, float v3, flo
 	GLCALL(glUniform4f(GetUniformLocation(uniform), v1, v2, v3, v4));
 }
 
+void Shader::SetUniformMat4f(const char* uniform, glm::mat4& matrix)
+{
+	GLCALL(glUniformMatrix4fv(GetUniformLocation(uniform), 1, GL_FALSE, &matrix[0][0]));
+}
+
 int Shader::GetUniformLocation(const char* uniform) const
 {
 	GLCALL(int location = glGetUniformLocation(m_programID, uniform));
