@@ -155,6 +155,7 @@
     <ClCompile Include="src\core\Shader.cpp" />
     <ClCompile Include="src\core\Texture.cpp" />
     <ClCompile Include="src\core\VertexBuffer.cpp" />
+    <ClCompile Include="src\core\Window.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="vender\glm\detail\glm.cpp" />
     <ClCompile Include="vender\imgui\imgui.cpp" />
@@ -174,6 +175,7 @@
     <ClInclude Include="src\core\Shader.h" />
     <ClInclude Include="src\core\Texture.h" />
     <ClInclude Include="src\core\VertexBuffer.h" />
+    <ClInclude Include="src\core\Window.h" />
     <ClInclude Include="vender\glm\common.hpp" />
     <ClInclude Include="vender\glm\detail\compute_common.hpp" />
     <ClInclude Include="vender\glm\detail\compute_vector_relational.hpp" />
