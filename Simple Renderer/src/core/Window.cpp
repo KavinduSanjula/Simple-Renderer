@@ -18,11 +18,20 @@ Window::Window(const std::string& title, int width, int height)
 
 	glfwMakeContextCurrent(m_Window);
 	glewInit();
+
+	ImGui::CreateContext();
+	ImGui::StyleColorsDark();
+	ImGui_ImplGlfw_InitForOpenGL(m_Window, true);
+	ImGui_ImplOpenGL3_Init("#version 330 core");
+
 }
 
 Window::~Window()
 {
 	glfwTerminate();
+	ImGui_ImplOpenGL3_Shutdown();
+	ImGui_ImplGlfw_Shutdown();
+	ImGui::DestroyContext();
 }
 
 bool Window::ShouldClose() const
@@ -38,4 +47,17 @@ void Window::SwapBuffers() const
 void Window::PollEvents() const
 {
 	glfwPollEvents();
+}
+
+void Window::ImGuiNewFrame() const
+{
+	ImGui_ImplOpenGL3_NewFrame();
+	ImGui_ImplGlfw_NewFrame();
+	ImGui::NewFrame();
+}
+
+void Window::ImGuiRender() const
+{
+	ImGui::Render();
+	ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 }

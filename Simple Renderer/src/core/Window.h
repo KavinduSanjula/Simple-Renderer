@@ -4,6 +4,10 @@
 #include <GLFW/glfw3.h>
 #include <string>
 
+#include "imgui/imgui.h"
+#include "imgui/imgui_impl_glfw.h"
+#include "imgui/imgui_impl_opengl3.h"
+
 class Window
 {
 private:
@@ -20,6 +24,9 @@ public:
 	bool ShouldClose() const;
 	void SwapBuffers() const;
 	void PollEvents() const;
+
+	void ImGuiNewFrame() const;
+	void ImGuiRender() const;
 
 	inline GLFWwindow* GetWindow() { return m_Window; }
 	inline int GetWidth() const { return m_Width; }

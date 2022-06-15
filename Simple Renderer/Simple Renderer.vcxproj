@@ -74,14 +74,14 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)bin\$(Configuration)\Intermediate\</IntDir>
-    <IncludePath>$(ProjectDir)vender;$(SolutionDir)Dependencies\GLEW\include;$(SolutionDir)Dependencies\GLFW\include;$(IncludePath)</IncludePath>
+    <IncludePath>src;$(ProjectDir)vender;$(SolutionDir)Dependencies\GLEW\include;$(SolutionDir)Dependencies\GLFW\include;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)Dependencies\GLEW\lib\Release\Win32;$(SolutionDir)Dependencies\GLFW\lib-vc2019;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)bin\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)bin\$(Configuration)\Intermediate\</IntDir>
-    <IncludePath>$(ProjectDir)vender;$(SolutionDir)Dependencies\GLEW\include;$(SolutionDir)Dependencies\GLFW\include;$(IncludePath)</IncludePath>
+    <IncludePath>src;$(ProjectDir)vender;$(SolutionDir)Dependencies\GLEW\include;$(SolutionDir)Dependencies\GLFW\include;$(IncludePath)</IncludePath>
     <LibraryPath>$(SolutionDir)Dependencies\GLEW\lib\Release\Win32;$(SolutionDir)Dependencies\GLFW\lib-vc2019;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -157,6 +157,8 @@
     <ClCompile Include="src\core\VertexBuffer.cpp" />
     <ClCompile Include="src\core\Window.cpp" />
     <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\test framework\TestMenu.cpp" />
+    <ClCompile Include="src\test framework\tests\ClearColor.cpp" />
     <ClCompile Include="vender\glm\detail\glm.cpp" />
     <ClCompile Include="vender\imgui\imgui.cpp" />
     <ClCompile Include="vender\imgui\imgui_demo.cpp" />
@@ -176,6 +178,8 @@
     <ClInclude Include="src\core\Texture.h" />
     <ClInclude Include="src\core\VertexBuffer.h" />
     <ClInclude Include="src\core\Window.h" />
+    <ClInclude Include="src\test framework\Test.h" />
+    <ClInclude Include="src\test framework\tests\ClearColor.h" />
     <ClInclude Include="vender\glm\common.hpp" />
     <ClInclude Include="vender\glm\detail\compute_common.hpp" />
     <ClInclude Include="vender\glm\detail\compute_vector_relational.hpp" />
