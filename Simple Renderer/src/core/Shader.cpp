@@ -1,6 +1,6 @@
 #include "Shader.h"
 
-std::string Shader::read_content_from_file(std::string& filename) {
+std::string Shader::read_content_from_file(const std::string& filename) const {
 	std::string content;
 	std::string line;
 
@@ -18,7 +18,7 @@ std::string Shader::read_content_from_file(std::string& filename) {
 	return content;
 }
 
-unsigned int Shader::compile_shader(unsigned int type, std::string shaderSource)
+unsigned int Shader::compile_shader(unsigned int type, std::string shaderSource) const
 {
 	const char* shader_source = shaderSource.c_str();
 	GLCALL(unsigned int shader = glCreateShader(type));
@@ -37,7 +37,7 @@ unsigned int Shader::compile_shader(unsigned int type, std::string shaderSource)
 	return shader;
 }
 
-Shader::Shader(std::string vertexShaderPath, std::string fragmentShaderPath)
+Shader::Shader(const std::string vertexShaderPath, const std::string fragmentShaderPath)
 {
 	std::string vs = read_content_from_file(vertexShaderPath);
 	std::string fs = read_content_from_file(fragmentShaderPath);

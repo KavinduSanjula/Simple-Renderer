@@ -3,6 +3,7 @@
 
 #include "test framework/Test.h"
 #include "test framework/tests/ClearColor.h"
+#include "test framework/tests/Texture2D.h"
 
 int main() {
 
@@ -14,6 +15,7 @@ int main() {
 
 	test::TestMenu* testMenu = new test::TestMenu();
 	testMenu->RegisterTest<test::ClearColor>("Clear Color");
+	testMenu->RegisterTest<test::Texture2D>("Texture");
 
 	test::Test* currentTest = testMenu;//new test::ClearColor();
 

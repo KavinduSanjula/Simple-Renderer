@@ -13,11 +13,11 @@ private:
 	unsigned int m_programID;
 
 private:
-	std::string read_content_from_file(std::string& filename);
-	unsigned int compile_shader(unsigned int type, std::string shaderSource);
+	std::string read_content_from_file(const std::string& filename) const;
+	unsigned int compile_shader(unsigned int type, std::string shaderSource) const;
 
 public:
-	Shader(std::string vertexShaderPath, std::string fragmentShaderPath);
+	Shader(const std::string vertexShaderPath, const std::string fragmentShaderPath);
 	~Shader();
 
 	void Bind() const;
