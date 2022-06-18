@@ -3,6 +3,7 @@
 
 #include "test framework/Test.h"
 #include "test framework/tests/ClearColor.h"
+#include "test framework/tests/BatchRenderer.h"
 
 int main() {
 
@@ -14,8 +15,9 @@ int main() {
 
 	test::TestMenu* testMenu = new test::TestMenu();
 	testMenu->RegisterTest<test::ClearColor>("Clear Color");
+	testMenu->RegisterTest<test::BatchRenderer>("Batch Renderer");
 
-	test::Test* currentTest = testMenu;//new test::ClearColor();
+	test::Test* currentTest = testMenu;
 
 	currentTest->Start();
 

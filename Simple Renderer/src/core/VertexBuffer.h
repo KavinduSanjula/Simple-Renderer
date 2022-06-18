@@ -8,11 +8,14 @@ private:
 	unsigned int m_bufferID;
 
 public:
-	VertexBuffer(const void* data, unsigned int size, VertexBufferLayout layout);
+	VertexBuffer(const void* data, unsigned int size, unsigned int mode, VertexBufferLayout layout);
 	~VertexBuffer();
 
 	void Bind() const;
 	void Unbind() const;
 
+	void SetData(const void* data);
+
 	inline unsigned int GetBufferID() const { return m_bufferID; }
+
 };
