@@ -2,7 +2,6 @@
 #include "core/Renderer.h"
 
 #include "test framework/Test.h"
-#include "test framework/tests/ClearColor.h"
 #include "test framework/tests/BatchRenderer.h"
 
 int main() {
@@ -14,10 +13,9 @@ int main() {
 	Renderer renderer;
 
 	test::TestMenu* testMenu = new test::TestMenu();
-	testMenu->RegisterTest<test::ClearColor>("Clear Color");
 	testMenu->RegisterTest<test::BatchRenderer>("Batch Renderer");
 
-	test::Test* currentTest = testMenu;
+	test::Test* currentTest = new test::BatchRenderer(); //testMenu;
 
 	currentTest->Start();
 
@@ -25,17 +23,17 @@ int main() {
 		renderer.Clear();
 
 		window.ImGuiNewFrame();
-		
-		currentTest = testMenu->GetCurretnTest();
 
 		if (currentTest) {
 			currentTest->Update();
 			currentTest->OnImGuiRender();
 			ImGui::Begin("Menu");
 			if (ImGui::Button("<-")) {
+#if 0
 				delete currentTest;
 				currentTest = nullptr;
 				testMenu->SetCurrentTestToNull();
+#endif
 			}
 			ImGui::End();
 		}
@@ -43,6 +41,8 @@ int main() {
 			testMenu->Update();
 			testMenu->OnImGuiRender();
 		}
+
+		//currentTest = testMenu->GetCurretnTest();
 		
 		window.ImGuiRender();
 

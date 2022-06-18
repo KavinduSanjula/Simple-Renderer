@@ -159,7 +159,6 @@
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\test framework\TestMenu.cpp" />
     <ClCompile Include="src\test framework\tests\BatchRenderer.cpp" />
-    <ClCompile Include="src\test framework\tests\ClearColor.cpp" />
     <ClCompile Include="vender\glm\detail\glm.cpp" />
     <ClCompile Include="vender\imgui\imgui.cpp" />
     <ClCompile Include="vender\imgui\imgui_demo.cpp" />
@@ -181,7 +180,6 @@
     <ClInclude Include="src\core\Window.h" />
     <ClInclude Include="src\test framework\Test.h" />
     <ClInclude Include="src\test framework\tests\BatchRenderer.h" />
-    <ClInclude Include="src\test framework\tests\ClearColor.h" />
     <ClInclude Include="vender\glm\common.hpp" />
     <ClInclude Include="vender\glm\detail\compute_common.hpp" />
     <ClInclude Include="vender\glm\detail\compute_vector_relational.hpp" />
