@@ -1,5 +1,7 @@
 #include "Renderer.h"
 
+#include <iostream>
+
 Renderer::Renderer()
 {
 }
@@ -10,6 +12,7 @@ Renderer::~Renderer()
 
 void Renderer::Draw(const VertexArray& va, const IndexBuffer& ib, const Shader& shader)
 {
+	std::cout << "[Draw Call]" << std::endl;
 	va.Bind();
 	ib.Bind();
 	shader.Bind();

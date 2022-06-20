@@ -12,7 +12,7 @@ out float v_TexID;
 uniform mat4 u_Projection;
 
 void main(){
-	gl_Position = u_Projection * vec4(a_Pos.xyz, 1.0);
+	gl_Position = vec4(a_Pos.xyz,1.0);//u_Projection * vec4(a_Pos.xyz, 1.0);
 	v_Color = a_Color;
 	v_TexCoord = a_TexCoord;
 	v_TexID = a_TexID;

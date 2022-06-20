@@ -2,7 +2,7 @@
 #include "core/Renderer.h"
 
 #include "test framework/Test.h"
-#include "test framework/tests/BatchRenderer.h"
+#include "test framework/tests/Test_BatchRenderer.h"
 
 int main() {
 
@@ -13,9 +13,9 @@ int main() {
 	Renderer renderer;
 
 	test::TestMenu* testMenu = new test::TestMenu();
-	testMenu->RegisterTest<test::BatchRenderer>("Batch Renderer");
+	testMenu->RegisterTest<test::Test_BatchRenderer>("Batch Renderer");
 
-	test::Test* currentTest = new test::BatchRenderer(); //testMenu;
+	test::Test* currentTest = new test::Test_BatchRenderer(); //testMenu;
 
 	currentTest->Start();
 

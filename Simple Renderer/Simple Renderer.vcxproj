@@ -149,8 +149,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\core\BatchRenderer.cpp" />
     <ClCompile Include="src\core\IndexBuffer.cpp" />
     <ClCompile Include="src\core\opengl.cpp" />
+    <ClCompile Include="src\core\Quad.cpp" />
     <ClCompile Include="src\core\Renderer.cpp" />
     <ClCompile Include="src\core\Shader.cpp" />
     <ClCompile Include="src\core\Texture.cpp" />
@@ -159,7 +161,7 @@
     <ClCompile Include="src\core\Window.cpp" />
     <ClCompile Include="src\Main.cpp" />
     <ClCompile Include="src\test framework\TestMenu.cpp" />
-    <ClCompile Include="src\test framework\tests\BatchRenderer.cpp" />
+    <ClCompile Include="src\test framework\tests\Test_BatchRenderer.cpp" />
     <ClCompile Include="vender\glm\detail\glm.cpp" />
     <ClCompile Include="vender\imgui\imgui.cpp" />
     <ClCompile Include="vender\imgui\imgui_demo.cpp" />
@@ -172,8 +174,10 @@
     <ClCompile Include="src\util\VertexBufferLayout.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\core\BatchRenderer.h" />
     <ClInclude Include="src\core\IndexBuffer.h" />
     <ClInclude Include="src\core\opengl.h" />
+    <ClInclude Include="src\core\Quad.h" />
     <ClInclude Include="src\core\Renderer.h" />
     <ClInclude Include="src\core\Shader.h" />
     <ClInclude Include="src\core\Texture.h" />
@@ -181,7 +185,8 @@
     <ClInclude Include="src\core\VertexBuffer.h" />
     <ClInclude Include="src\core\Window.h" />
     <ClInclude Include="src\test framework\Test.h" />
-    <ClInclude Include="src\test framework\tests\BatchRenderer.h" />
+    <ClInclude Include="src\test framework\tests\Test_BatchRenderer.h" />
+    <ClInclude Include="src\util\vector.h" />
     <ClInclude Include="vender\glm\common.hpp" />
     <ClInclude Include="vender\glm\detail\compute_common.hpp" />
     <ClInclude Include="vender\glm\detail\compute_vector_relational.hpp" />

@@ -72,10 +72,16 @@
     <ClCompile Include="src\test framework\TestMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\test framework\tests\BatchRenderer.cpp">
+    <ClCompile Include="src\core\VertexArray.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\core\VertexArray.cpp">
+    <ClCompile Include="src\core\BatchRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\Quad.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test framework\tests\Test_BatchRenderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -983,10 +989,19 @@
     <ClInclude Include="src\test framework\Test.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\test framework\tests\BatchRenderer.h">
+    <ClInclude Include="src\core\VertexArray.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\core\VertexArray.h">
+    <ClInclude Include="src\core\BatchRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\Quad.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\util\vector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\test framework\tests\Test_BatchRenderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
