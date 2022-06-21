@@ -1,11 +1,11 @@
 #include "Texture.h"
 
-Texture::Texture(const char* filepath)
+Texture::Texture(const std::string& filepath)
 	:m_Width(0),m_Height(0),m_NrChannels(0),m_TextureID(0),m_LocalBuffer(nullptr)
 
 {
 	stbi_set_flip_vertically_on_load(1);
-	m_LocalBuffer = stbi_load(filepath, &m_Width, &m_Height, &m_NrChannels, 4);
+	m_LocalBuffer = stbi_load(filepath.c_str(), &m_Width, &m_Height, &m_NrChannels, 4);
 
 	GLCALL(glGenTextures(1, &m_TextureID));
 	GLCALL(glBindTexture(GL_TEXTURE_2D, m_TextureID));

@@ -4,6 +4,7 @@
 
 #include "opengl.h"
 
+#include <string>
 
 class Texture {
 private:
@@ -12,7 +13,7 @@ private:
 	unsigned char* m_LocalBuffer;
 
 public:
-	Texture(const char* filepath);
+	Texture(const std::string& filepath);
 	~Texture();
 
 	void Bind(unsigned int slot = 0) const;

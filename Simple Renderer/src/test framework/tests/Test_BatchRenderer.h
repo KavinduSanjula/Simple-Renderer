@@ -33,7 +33,11 @@ namespace test {
 
 	private:
 		Quad m_Quad1;
+		Quad m_Quad2;
 		BatchRenderer* m_Renderer;
+
+		Vec2 m_Pos = { -.5f, -.5f };
+		Vec2 m_Scale = { .5,.5 };
 
 	};
 

@@ -6,9 +6,9 @@ in vec4 v_Color;
 in vec2 v_TexCoord;
 in float v_TexID;
 
-uniform sampler2D u_Texture[3];
+uniform sampler2D u_Texture[5];
 
 void main(){
 	vec4 texColor = texture(u_Texture[int(v_TexID)],v_TexCoord);
-	FragColor = vec4(1.0,1.0,0.0,1.0); //texColor * v_Color;
+	FragColor = v_Color * texColor;
 }
