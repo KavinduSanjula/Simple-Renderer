@@ -4,10 +4,13 @@ namespace test {
 
 
 	Test_BatchRenderer::Test_BatchRenderer()
-		:m_Quad1({ -0.5,-0.5 }, { 1,1 }, {1,1,1,1}),
-		m_Quad2({ .5,.5 }, { .5,.5 }, {1.0,0.0,0.0,1.0})
+		:m_Quad1({ -0.5,-0.5 }, { 1,1 }, { 1,1,1,1 }),
+		m_Quad2({ .5,.5 }, { .5,.5 }, { 1.0,0.0,0.0,1.0 })
 	{
 		m_Renderer = new BatchRenderer;
+
+		
+
 	}
 
 	Test_BatchRenderer::~Test_BatchRenderer()
@@ -20,10 +23,20 @@ namespace test {
 		m_Quad2.SetPosition(m_Pos);
 		m_Quad2.SetSize(m_Scale);
 
+		Quad q3({ -1,-1 }, { .2,.2 });
+		Quad q4({ .8,.8 }, { .2,.2 }, { 1.0,0.0,0.0,1.0 });
+		Quad q5({ .8,-.8 }, { .2,.2 }, { 1.0,0.0,1.0,1.0 });
+
 		m_Renderer->BeginBatch();
+
 		m_Renderer->Push(m_Quad1);
 		m_Renderer->Push(m_Quad2);
+		m_Renderer->Push(q3);
+		m_Renderer->Push(q4);
+		m_Renderer->Push(q5);
+
 		m_Renderer->Flush();
+		
 	}
 
 	void Test_BatchRenderer::OnImGuiRender()

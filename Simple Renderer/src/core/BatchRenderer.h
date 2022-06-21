@@ -11,7 +11,7 @@
 #include <vector>
 #include <memory>
 
-#define MAX_QUAD_OUNT 4
+#define MAX_QUAD_OUNT 1000
 
 
 class BatchRenderer {
