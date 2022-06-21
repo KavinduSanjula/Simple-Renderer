@@ -5,11 +5,9 @@ namespace test {
 
 	Test_BatchRenderer::Test_BatchRenderer()
 		:m_Quad1({ -0.5,-0.5 }, { 1,1 }, {1,1,1,1}),
-		m_Quad2({ .5,.5 }, { .5,.5 }, {1.0,0.0,0.0,1.0}, "res/images/sanju.jpg")
+		m_Quad2({ .5,.5 }, { .5,.5 }, {1.0,0.0,0.0,1.0})
 	{
 		m_Renderer = new BatchRenderer;
-		
-
 	}
 
 	Test_BatchRenderer::~Test_BatchRenderer()

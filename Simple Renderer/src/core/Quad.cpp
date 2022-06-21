@@ -1,11 +1,11 @@
 #include "Quad.h"
 
-std::array<Vertex, 4> MakeQuad(Vec2 pos, Vec2 size, Vec4 color, float texID);
+std::array<Vertex, 4> MakeQuad(Vec2 pos, Vec2 size, Vec4 color, float texID=0.0f);
 
-Quad::Quad(Vec2 pos, Vec2 size, Vec4 color, const std::string& texPath)
-	:m_Position(pos), m_Size(size), m_Color(color), m_TexturePath(texPath), m_TexID(0.0f)
+Quad::Quad(Vec2 pos, Vec2 size, Vec4 color)
+	:m_Position(pos), m_Size(size), m_Color(color)
 {
-	m_Vertices = MakeQuad(m_Position, m_Size, m_Color, m_TexID);
+	m_Vertices = MakeQuad(m_Position, m_Size, m_Color);
 }
 
 Quad::~Quad()
@@ -17,19 +17,19 @@ Quad::~Quad()
 void Quad::SetTextureID(float texID)
 {
 	m_TexID = texID;
-	m_Vertices = MakeQuad(m_Position, m_Size, m_Color, m_TexID);
+	m_Vertices = MakeQuad(m_Position, m_Size, m_Color);
 }
 
 void Quad::SetPosition(Vec2 pos)
 {
 	m_Position = pos;
-	m_Vertices = MakeQuad(m_Position, m_Size, m_Color, m_TexID);
+	m_Vertices = MakeQuad(m_Position, m_Size, m_Color);
 }
 
 void Quad::SetSize(Vec2 size)
 {
 	m_Size = size;
-	m_Vertices = MakeQuad(m_Position, m_Size, m_Color, m_TexID);
+	m_Vertices = MakeQuad(m_Position, m_Size, m_Color);
 }
 
 std::array<Vertex, 4> MakeQuad(Vec2 pos, Vec2 size, Vec4 color, float texID) {

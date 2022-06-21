@@ -10,21 +10,16 @@
 
 #include <vector>
 #include <memory>
-#include <unordered_map>
 
 #define MAX_QUAD_OUNT 4
-#define MAX_TEXTURE_COUNT 5
 
 
 class BatchRenderer {
 private:
 	std::vector<Quad> m_Quads;
-	std::unordered_map<std::string, int> m_Textures;
-	std::vector<int> m_TexIDs;
 
 	int m_RecevedVertexCount;
 	int m_IndexToDraw;
-	unsigned int m_TextureID;
 	unsigned int m_Indeces[MAX_QUAD_OUNT * 6];
 
 	std::unique_ptr<VertexBuffer> m_VB;
@@ -46,5 +41,4 @@ public:
 
 private:
 	void GenerateIndeces();
-	void BindTextures();
 };
