@@ -1,7 +1,8 @@
 #include "Texture.h"
 
 Texture::Texture(const std::string& filepath)
-	:m_Width(0),m_Height(0),m_NrChannels(0),m_TextureID(0),m_LocalBuffer(nullptr)
+	:m_Width(0),m_Height(0),m_NrChannels(0),m_TextureID(0),m_LocalBuffer(nullptr),
+	m_TexturePath(filepath)
 
 {
 	stbi_set_flip_vertically_on_load(1);
@@ -28,8 +29,9 @@ Texture::~Texture()
 
 void Texture::Bind(unsigned int slot) const
 {
-	GLCALL(glActiveTexture(GL_TEXTURE0 + slot));
-	GLCALL(glBindTexture(GL_TEXTURE_2D, m_TextureID));
+	//GLCALL(glActiveTexture(GL_TEXTURE0 + slot));
+	//GLCALL(glBindTexture(GL_TEXTURE_2D, m_TextureID));
+	glBindTextureUnit(slot, m_TextureID);
 }
 
 void Texture::Unbind()

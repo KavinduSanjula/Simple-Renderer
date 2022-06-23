@@ -17,7 +17,7 @@ private:
 	std::array<Vertex, 4> m_Vertices;
 
 public:
-	Quad(Vec2 pos = { 0,0 }, Vec2 size = { 100,100 }, Vec4 color = { 1,1,1,1 });
+	Quad(Vec2 pos, Vec2 size, Vec4 color, const std::string& texPath);
 	~Quad();
 
 	inline std::array<Vertex, 4> GetVertices() const { return m_Vertices; }

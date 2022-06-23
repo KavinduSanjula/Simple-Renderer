@@ -26,7 +26,8 @@ public:
 	void SetUniform1i(const char* uniform, int val);
 	void SetUniform4f(const char* uniform, float v1, float v2, float v3, float v4);
 	void SetUniformMat4f(const char* uniform, glm::mat4& matrix);
-	void SetUniformArrayi(const char* uniform, int size, const int* data);
+	void SetUniformArrayi(const char* uniform, int count, const int* data);
+	void SetUniformArrayf(const char* uniform, int count, const float* data);
 
 	int GetUniformLocation(const char* uniform) const;
 

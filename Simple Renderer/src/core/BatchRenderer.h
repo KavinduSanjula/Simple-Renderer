@@ -8,11 +8,13 @@
 #include "core/Texture.h"
 #include "core/Renderer.h"
 
+#include <string>
 #include <vector>
 #include <memory>
+#include <array>
 
 #define MAX_QUAD_OUNT 1000
-
+#define MAX_TEXTURE_COUNT 5
 
 class BatchRenderer {
 private:
@@ -20,6 +22,8 @@ private:
 
 	int m_RecevedVertexCount;
 	int m_IndexToDraw;
+	int m_TextureID;
+	std::array<unsigned int, MAX_TEXTURE_COUNT> m_TextureMap;
 	unsigned int m_Indeces[MAX_QUAD_OUNT * 6];
 
 	std::unique_ptr<VertexBuffer> m_VB;
@@ -40,5 +44,6 @@ public:
 	void Push(Quad& quad);
 
 private:
+	int PushTexture(const Texture& texture);
 	void GenerateIndeces();
 };

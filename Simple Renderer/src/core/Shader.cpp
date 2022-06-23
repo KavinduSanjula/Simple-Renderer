@@ -87,9 +87,14 @@ void Shader::SetUniformMat4f(const char* uniform, glm::mat4& matrix)
 	GLCALL(glUniformMatrix4fv(GetUniformLocation(uniform), 1, GL_FALSE, &matrix[0][0]));
 }
 
-void Shader::SetUniformArrayi(const char* uniform, int size, const int* data)
+void Shader::SetUniformArrayi(const char* uniform, int count, const int* data)
 {
-	glUniform1iv(GetUniformLocation(uniform), size, data);
+	glUniform1iv(GetUniformLocation(uniform), count, data);
+}
+
+void Shader::SetUniformArrayf(const char* uniform, int count, const float* data)
+{
+	glUniform1fv(GetUniformLocation(uniform), count, data);
 }
 
 int Shader::GetUniformLocation(const char* uniform) const
